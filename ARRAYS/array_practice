@@ -1,0 +1,74 @@
+const years = ["2020", "2021", "2022"];
+ console.log(years["2"] !== years["02"]); // The 2 in years[2] is coerced into a string by the JavaScript engine through an implicit toString conversion. As a result, '2' and '02' would refer to two different slots on the years object, and the comparison would return true.
+// Only years['2'] is an actual array index. years['02'] is an arbitrary string property that will not be visited in array iteration.
+
+const fruits = ["banana", "apple", "litchi"];
+fruits[5] = ["mango"];
+console.log(fruits[5]); // 'mango'
+console.log(Object.keys(fruits)); // ['0', '1', '2', '5']
+console.log(fruits.length); // 6
+/* .length does not count the total number of items. 
+It calculates:
+length = highest numerical index + 1 */
+
+/*  Iteration methods such as forEach don't visit empty slots at all. Other methods, such as concat, copyWithin, etc., preserve empty slots when doing the copying, */
+const colors = ["red", "yellow", "blue"];
+colors[5] = "purple";
+colors.forEach((item, index) => {
+  console.log(`${index}: ${item}`);
+});
+// Output:
+// 0: red
+// 1: yellow
+// 2: blue
+// 5: purple
+console.log(colors.reverse());// ['purple', <2 empty items> , 'blue', 'yellow', 'red']
+
+/* Newer methods (e.g., keys) do not treat empty slots specially and treat them as if they contain undefined.
+ Methods that conflate empty slots with undefined elements include the following: entries(), fill(), find(), findIndex(), findLast(), findLastIndex(), includes(), join(), keys(), toLocaleString(), toReversed(), toSorted(), toSpliced(), values(), and with().*/
+const colors_new = ["red", "yellow", "blue"];
+colors_new[5] = "purple";
+const iterator = colors_new.keys();
+for (const key of iterator) {
+  console.log(`${key}: ${colors_new[key]}`);
+}
+// Output
+// 0: red
+// 1: yellow
+// 2: blue
+// 3: undefined
+// 4: undefined
+// 5: purple
+const newColors = colors_new.toReversed(); // ['purple', undefined, undefined, 'blue', 'yellow', 'red']
+
+// CREATIN AN ARRAY
+// 'fruits' array created using array literal notation.
+const fruits = ["Apple", "Banana"];
+console.log(fruits.length);
+// 2
+
+// 'fruits2' array created using the Array() constructor.
+const fruits2 = new Array("Apple", "Banana");
+console.log(fruits2.length);
+// 2
+
+// 'fruits3' array created using String.prototype.split().
+const fruits3 = "Apple, Banana".split(", ");
+console.log(fruits3.length);
+// 2
+
+// CREATE A STRING FROM AN ARRAY
+const fruits = ["Apple", "Banana"];
+const fruitsString = fruits.join(", ");
+console.log(fruitsString);
+// "Apple, Banana"
+// APPEND AN ITEM TO AN ARRAY means adding new item to the array , and it is done using push() method
+
+// REMOVE MULTIPLE ITEMS FROM THE END OF THE ARRAY
+const fruits = ["Apple", "Banana", "Strawberry", "Mango", "Cherry"];
+const start = -3;
+const removedItems = fruits.splice(start);
+console.log(fruits);
+// ["Apple", "Banana"]
+console.log(removedItems);
+// ["Strawberry", "Mango", "Cherry"]
