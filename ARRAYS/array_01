@@ -1,0 +1,65 @@
+// in js arrays are resizable and can contain a mix of different datatypes.
+// there is also a prototype access in array
+// in JS arrays are not primitives
+// JavaScript array-copy operations create shallow copies. (All standard built-in copy operations with any JavaScript objects create shallow copies, rather than deep copies)
+// in jS there can be an array inside an another array
+const myArr = [56, 4, 34, 7, 4 ,2];
+const arr = [23, "hii", true, 34.45, 12, 0, false];
+console.log(myArr[3]);
+console.log(arr);
+
+myArr.push("i am first array");
+console.log(myArr);
+arr.pop();
+console.log(arr);
+
+arr.unshift(100);  // unshift add the element in starting of the array.
+console.log(arr);
+
+arr.shift();  // it removes  first element of the array. 
+console.log(arr);
+
+// to check whether an element is in the array or not
+console.log(arr.includes(45));
+
+console.log(arr.indexOf(34.45));  // it returns the index of the element if it is present in the array otherwise it returns -1
+
+const arr1 = myArr.join(); 
+console.log(arr1);  // it converts the array into string and returns the string.
+
+// slice, splice
+console.log("original array", myArr);
+// slice does not manipulate original array. 
+const a1 = myArr.slice(1, 4);
+console.log("part of slice" , a1);
+console.log("after slice operation", myArr);
+// splice manipulate original array. 
+const a2 = myArr.splice(1, 4);
+console.log("array part of splice" , a2);
+console.log("after splice operation", myArr); 
+
+const AI = ["gemini", "claude","antigravity", "llama" ];
+const prompt = ["gpt-4", "gpt-3.5", "gpt-3", "gpt-2"];
+// AI.push(prompt); // it adds first array in the second array as a single element.
+console.log(AI);
+const combinedarr = AI.concat(prompt)
+ console.log(combinedarr);  // it does not manipulate the original array. it returns a new array which is the combination of two or more array. and for conocat() function u should hold that new concat array, and print that new array, then u will get the result; if u just concat two's u don't get thte desired array or output.
+
+// USE SPREAD FUNCTION TO CONCATENATE
+const another_arr = [...AI, ...prompt];
+ console.log(another_arr);
+
+// ARRAY INSIDE AN ARRAY
+const another_arr1 = [1, 5, 3,[34, 5, 23], 7, [6, 57,[4, 6, [8, 9]]]];
+const output_arr = another_arr1.flat(8);// ALSO CAN WRITE ANY DIGIT LIKE 2 OR 3  OR ANY DESIRED DIGIT || returns a new array with all sub-array elements concatenated into it recursively up to the specified depth.
+console.log(output_arr);
+
+console.log(Array.isArray("cat"))
+console.log(Array.from("cat")); // creates an array from array like object
+console.log(Array.from({name: "cat"}))  // it is an interesting part.. as JS write now don't know whether array has to make of keys or value, so it will return square bracket only
+ 
+let score1 = 100
+let score2 = 400
+let score3 = 300
+console.log(Array.of(score1, score2, score3)); // when u wanna to made array of certain elements.
+
