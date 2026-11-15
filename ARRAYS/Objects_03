@@ -1,0 +1,28 @@
+// OBJECT DE-STRUCTURE 
+ const course = {
+    courseName: "leaning_JS",
+    course_Fee: 999,
+    course_mentor: "HITESH CHOUDHARY"
+ }
+ // console.log(course.course_mentor); // old way
+ const {course_Fee: fee} = course  // here i destructure course_Fee to 'fee' 
+ console.log(fee);
+
+/*   OBJECT DESTRUCTURING IN REACT
+
+const navbar = ({company}) => {
+
+}
+navbar(company = "Hexacore") */
+
+// API(JSON FORMAT) can be in object format with no name or can be in array format, JSON = javascript object notation
+ /* {
+    courseName: "leaning_JS",
+    course_Fee: 999,
+    course_mentor: "HITESH CHOUDHARY"
+}
+[
+    {},
+    {},
+    {}
+] */
