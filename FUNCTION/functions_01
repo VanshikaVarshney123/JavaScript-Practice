@@ -1,0 +1,36 @@
+function name_1(){
+    console.log("V")
+    console.log("a")
+    console.log("n")
+    console.log("s")
+    console.log("h")
+    console.log("i")
+    console.log("k")
+    console.log("a")
+    }
+    name_1() // name is reference and '()' is execution
+
+    function add_two_nums(nums1, nums2){  // nums1 , nums2 are parameter
+        console.log(nums1 + nums2);
+    }
+    add_two_nums(4, null) // 4, null are arguments
+
+     function add_two_nums(nums1, nums2){  
+         let sum = nums1 + nums2
+         console.log("cat"); // will print
+         return sum
+         console.log("cat"); // this will not print, as in js by default after return no execution takes place
+         return nums1 + nums2 // we can also return output in this way. 
+     }
+     const sum = add_two_nums(4, 9);
+    console.log("Result: ", sum); 
+
+    function loginUserMessage(username = "Jansen"){      // here the "Jansen" value is default value, if no username is provided, it will return Jansen 
+        if(username === undefined){         // in parenthesis, also can pass -> undefined , then if will not run cuz it becomes false condtion , also !username
+            console.log("PLEASE ENTER A USERNAME");
+            return 
+        }
+        return `${username} just logged in`
+    }
+    console.log(loginUserMessage("aryan"))
+    console.log(loginUserMessage()) // undefined
