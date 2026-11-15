@@ -1,0 +1,47 @@
+const tinderUser = new Object() // singleton object
+ const instaUser = {} // object literal
+tinderUser.name = "deny"
+ tinderUser.isLoggedIn = true
+ tinderUser.id = "893nd"
+  console.log(tinderUser);
+ console.log(instaUser);
+
+const obj = {
+    email: "some2@gamil.com",
+    fullName: {
+        userName : {
+            firstName : "deny",
+            lastName : "ritchie" 
+        }
+    }
+}
+console.log(obj.fullName.userName.firstName); 
+
+// MERGING OBJECTS
+const obj1 = { 1: "a", 2: "b", 3: "c" }
+const obj2 = { 4: "d", 5: "e" }
+ const obj3 = Object.assign({}, obj1, obj2) // {} behaves as target object, and obj1 and obj2 are source objects, so the key-value pairs of obj1 and obj2 got merged into the target object.
+// const obj3 = {obj1, obj2}       , this will result in object inside object, not the key-value pairs got merged.
+// const obj3 = {...obj1, ...obj2} // MERGING USING SPREAD OPERATOR  // this is the best way to merge two objects, and it will return a new object with key-value pairs of both objects.
+console.log(obj3);  
+
+const users = [
+    {
+        id:1,
+        email: "hfkd@ejl.com"
+    },
+    {
+        id : 2,
+        email: "jsk@js.com"
+    }
+]
+users[1].email
+// FOR DATABASE WORK
+console.log(tinderUser);
+// this will transform the keys of object in an array.
+console.log(Object.keys(tinderUser));
+console.log(Object.values(tinderUser));
+console.log(Object.entries(tinderUser)); // this will turn every single key-value pair in an individual array
+
+// TO CHECK WHETHER A PROPERTY IS THERE IN A 
+console.log(tinderUser.hasOwnProperty('isLoggedIn'));
