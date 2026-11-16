@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app = "myApp" ng-controller = "myctrl">
+        <h2>Hello {{name}}</h2>
+        <p>Course: {{course}}</p>
+    </div>
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myctrl", function($scope){
+            $scope.name = "Riya";
+            $scope.course = "B.Tech CSE";
+        });
+    </script>
+</body>
+</html>
