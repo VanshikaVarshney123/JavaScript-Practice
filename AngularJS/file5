@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="listCtrl">
+  <h3>My Subjects</h3>
+  <ul>
+    <li ng-repeat="x in subjects">{{ x }}</li>
+  </ul>
+</div>
+
+<script>
+  var app = angular.module("myApp", []);
+  app.controller("listCtrl", function($scope) {
+    $scope.subjects = ["Web Designing", "DSA", "C Programming", "Maths"];
+  });
+</script>
+
+</body>
+</html>
