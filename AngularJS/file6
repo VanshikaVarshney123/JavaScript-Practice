@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+  <my-message></my-message>
+</div>
+
+<script>
+  var app = angular.module("myApp", []);
+
+  app.controller("myCtrl", function($scope) {
+    $scope.user = "Riya";
+  });
+
+  app.directive("myMessage", function() {
+    return {
+      restrict: "E",
+      template: "<h3>Welcome, {{ user }}!</h3>"
+    };
+  });
+</script>
+
+</body>
+</html>
