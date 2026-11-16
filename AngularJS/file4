@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="clcCtrl">
+        First Number : <input type="number" ng-model="a"><br><br>
+        Second Number : <input type="number" ng-model="b"><br><br>
+        
+        <button ng-click="calculate_1()"> Add </button>
+        <button ng-click="calculate_2()"> Subtract </button>
+        <button ng-click="calculate_3()"> Multiply </button>
+        <button ng-click="calculate_4()"> Divide </button>
+
+        <h3> Add = {{ result1 }} </h3>
+        <h3> Subtract = {{ result2 }} </h3>
+        <h3> Multiply = {{ result3 }} </h3>
+        <h4> Divide = {{ result4 }} </h4>
+    </div>
+
+    <script>
+        var app = angular.module("myApp", []);
+        
+        app.controller("clcCtrl", function ($scope) {
+            $scope.calculate_1 = function() {
+                $scope.result1 = $scope.a + $scope.b;
+            };
+
+            $scope.calculate_2 = function() {
+                $scope.result2 = $scope.a - $scope.b;
+            };
+
+            $scope.calculate_3 = function() {
+                $scope.result3 = $scope.a * $scope.b;
+            };
+
+            $scope.calculate_4 = function() {
+                if ($scope.b !== 0) {
+                    $scope.result4 = $scope.a / $scope.b;
+                } else {
+                    $scope.result4 = "Cannot divide by zero";
+                }
+            };
+        });
+    </script>
+</body>
+</html>
