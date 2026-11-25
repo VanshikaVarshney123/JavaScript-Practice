@@ -1,0 +1,37 @@
+// FORIN LOOP
+
+const lang = {
+   js: 'javascript',
+   cpp: 'C++'
+}
+ for (const key in object) {
+   if (!Object.hasOwn(object, key)) continue;
+   
+   const element = object[key];
+   
+   
+} 
+for (const key in lang) {
+      console.log(`${key} shortcut is for ${lang[key]}`);
+    }
+
+    // FORIN LOOP ON ARRAY
+    // array ki keys unka index hota h...
+    const programming = ["js", "rb", "py", "java", "cpp", "c"]
+    for (const key in programming) {
+      console.log(key); // will return indices as key of an array
+      console.log(programming[key]);  // will return actual values of array
+    } 
+
+    // FORIN LOOP ON MAP
+    const map = new Map()
+     map.set('IN', "INDIA")
+     map.set('USA', "UNITED STATE OF AMERICA")
+     map.set('FR', "FRANCE")
+     map.set('NZ', "NEWZEALAND")
+     for (const key in map) {
+      console.log(key);
+     } // as map is not iterable.. so it's keys cannot be access with loop
+
+     
+
