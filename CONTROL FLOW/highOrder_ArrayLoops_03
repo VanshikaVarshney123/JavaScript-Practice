@@ -1,0 +1,43 @@
+// FOREACH LOOP
+const coding = ["js", "ruby", "cpp"] 
+// FOREACH ME CALLBQCK FUNCTION DENA HOTA H.. callback funciton me function name nhi dete.. like we decalre function iin js --> function sum(){}  --> here we don't add the name..'sum'
+coding.forEach(function (val){
+   console.log(val);
+})
+// using 'arrow function' as callback function
+coding.forEach((item) => {
+   console.log(item);
+}) 
+
+const coding01 = ["js", "ruby", "cpp"]
+function printMe(item){  // this item in the parenthesis is parameter
+   console.log(item);
+}
+coding01.forEach(printMe) 
+// foreach has access of 3 parameters
+const coding02 = ["js", "ruby", "cpp"]
+coding02.forEach((item, index, arr) => {
+   console.log(item, index, arr);
+}) 
+
+  // OBJECTS INSIDE ARRAY
+   const myCoding = [
+      {
+         languageName: "js",
+         fileNumber: "01"
+      },
+      {
+         languageName: "python",
+         fileNumber: "02"
+      },
+      {
+         languageName: "cpp",
+         fileNumber: "03"
+      }
+   ]
+   myCoding.forEach((item) =>{
+      console.log(item.fileNumber);
+   })
+   
+
+   
